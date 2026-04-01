@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MuscleMap</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo" style="display: flex; align-items: center; gap: 8px; font-weight: 700; letter-spacing: 0.5px;">
+        <i class="fa-solid fa-dumbbell"></i> MuscleMap
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="login-link">Back to Home</a>
+    </div>
+  </nav>
+
+  <main class="page-container auth-page-container">
+
+    <div class="auth-container">
+      <h2 class="auth-title">Login to MuscleMap</h2>
+
+      <!-- Login Form -->
+      <form id="auth-form" onsubmit="return validateForm(event)">
+
+        <div class="input-group">
+          <label for="email" class="auth-label">Email Address</label>
+          <!-- Using type="email" automatically requires an '@' symbol in modern browsers -->
+          <input type="email" id="email" name="email" class="auth-input" placeholder="example@email.com" required>
+          <p id="email-error" class="auth-error">Email must contain an '@' symbol.</p>
+        </div>
+
+        <div class="input-group-last">
+          <label for="password" class="auth-label">Password</label>
+          <input type="password" id="password" name="password" class="auth-input" placeholder="Enter your password"
+            required>
+        </div>
+
+        <button type="submit" class="btn-primary auth-button">
+          Login
+        </button>
+
+        <div class="auth-footer">
+          Don't have an account? <a href="signup.html" class="auth-link">Sign Up Here</a>
+        </div>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <script src="login.js"></script>
+
+</body>
+
+</html>
