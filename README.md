@@ -1,8 +1,6 @@
-
-# MuscleMap
-FitFinder is a fitness web application that allows users to search, filter, and explore exercises using real-time API data. It features an interactive UI, supports sorting and filtering using JavaScript higher-order functions, and provides detailed exercise information with visual demonstrations.
-=======
 # MuscleMap - Exercise Database Web App
+
+FitFinder is a fitness web application that allows users to search, filter, and explore exercises using real-time API data. It features an interactive UI, supports sorting and filtering using JavaScript higher-order functions, and provides detailed exercise information with visual demonstrations.
 
 <!-- Project Overview -->
 MuscleMap is a modern, responsive web application designed to help users discover and filter exercises based on categories and equipment. The goal of this project is to build an interactive frontend application featuring robust UI integration, active data fetching from public APIs, and complex logic handling using pure HTML, CSS, and Vanilla JavaScript.
@@ -33,6 +31,7 @@ This application dynamically fetches data from the open-source **Free Exercise D
 * **Responsive Design**: Designed Mobile-first breakpoints utilizing `@media` queries so the sidebar, search bar, and grid neatly wrap and adapt strictly across desktop, tablet, and mobile displays.
 
 
-
-
-
+<!-- Milestone 3: Advanced Logic & Code Modularity -->
+* **Search & Sorting**: Added dynamic frontend search using the `.filter()` array method to find exercises rapidly by name. Implemented dynamic A-Z and Z-A sorting utilizing the `.sort()` array function.
+* **Code Modularity**: Refactored the monolithic script (`app.js`) into strict, logically separated modules: `data.js` (API and state), `ui.js` (DOM rendering), `features.js` (search, sort logic), and `main.js` (event listeners & initialization).
+* **Dark Mode**, Upgraded the UI with a scalable Dark Mode toggle utilizing CSS variables and DOM manipulation.
