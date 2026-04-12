@@ -22,7 +22,11 @@
         <i class="fa-solid fa-dumbbell"></i> MuscleMap
       </div>
     </div>
-    <div class="nav-right">
+    <div class="nav-right" style="display: flex; gap: 15px; align-items: center;">
+      <button id="themeToggle" class="btn-theme"
+        style="background:none; border:none; color:white; cursor:pointer; font-size:1.2rem;">
+        <i class="fa-solid fa-moon"></i>
+      </button>
       <a href="login.html" class="login-link">Login / Register <i class="fa-solid fa-caret-down"></i></a>
     </div>
   </nav>
@@ -35,8 +39,13 @@
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
           <input type="text" placeholder="Search by exercise name" id="searchInput">
-          <i class="fa-solid fa-caret-down dropdown-icon"></i>
         </div>
+        <select id="sortSelect"
+          style="padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; font-family: 'Inter', sans-serif;">
+          <option value="default">Sort Options</option>
+          <option value="asc">Name (A-Z)</option>
+          <option value="desc">Name (Z-A)</option>
+        </select>
         <button class="btn-primary"><i class="fa-solid fa-plus"></i> CONTRIBUTE AN EXERCISE</button>
       </div>
     </header>
@@ -82,7 +91,10 @@
     </div>
   </main>
 
-  <script src="app.js"></script>
+  <script src="data.js"></script>
+  <script src="ui.js"></script>
+  <script src="features.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
