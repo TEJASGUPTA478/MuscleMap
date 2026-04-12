@@ -5,14 +5,14 @@ let allExercises = [];
 
 function fetchExercises() {
   fetch(API_URL)
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
-    .then(function(exerciseData) {
+    .then(function (exerciseData) {
       allExercises = exerciseData;
       initApp();
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log(error);
     });
 }

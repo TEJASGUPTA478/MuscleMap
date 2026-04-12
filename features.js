@@ -1,4 +1,10 @@
-function applyFiltersAndSort() {
+let currentPage = 1;
+const itemsPerPage = 12;
+
+function applyFiltersAndSort(resetPage = true) {
+  if (resetPage !== false) {
+    currentPage = 1;
+  }
   let searchWord = document.getElementById('searchInput').value.toLowerCase();
 
   let selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(function (categoryCheckbox) {
@@ -49,7 +55,59 @@ function applyFiltersAndSort() {
     });
   }
 
-  renderExercises(filteredExercises);
+  let totalItems = filteredExercises.length;
+  let totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+
+  if (currentPage > totalPages) {
+    currentPage = totalPages;
+  }
+
+  let startIndex = (currentPage - 1) * itemsPerPage;
+  let endIndex = startIndex + itemsPerPage;
+  let paginatedExercises = filteredExercises.slice(startIndex, endIndex);
+
+  renderExercises(paginatedExercises);
+  renderPaginationControls(totalPages);
+}
+
+function renderPaginationControls(totalPages) {
+  let paginationEl = document.getElementById('pagination-controls');
+  let prevBtn = document.getElementById('prevBtn');
+  let nextBtn = document.getElementById('nextBtn');
+  let pageInfo = document.getElementById('pageInfo');
+
+  if (totalPages <= 1) {
+    paginationEl.classList.add('hidden');
+  } else {
+    paginationEl.classList.remove('hidden');
+    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+    
+    if (currentPage === 1) {
+      prevBtn.disabled = true;
+      prevBtn.style.opacity = '0.5';
+      prevBtn.style.cursor = 'not-allowed';
+    } else {
+      prevBtn.disabled = false;
+      prevBtn.style.opacity = '1';
+      prevBtn.style.cursor = 'pointer';
+    }
+
+    if (currentPage >= totalPages) {
+      nextBtn.disabled = true;
+      nextBtn.style.opacity = '0.5';
+      nextBtn.style.cursor = 'not-allowed';
+    } else {
+      nextBtn.disabled = false;
+      nextBtn.style.opacity = '1';
+      nextBtn.style.cursor = 'pointer';
+    }
+  }
+}
+
+function changePage(delta) {
+  currentPage += delta;
+  applyFiltersAndSort(false);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function toggleTheme() {
