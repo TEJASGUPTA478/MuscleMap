@@ -1,6 +1,5 @@
 # MuscleMap - Exercise Database Web App
 
-FitFinder is a fitness web application that allows users to search, filter, and explore exercises using real-time API data. It features an interactive UI, supports sorting and filtering using JavaScript higher-order functions, and provides detailed exercise information with visual demonstrations.
 
 <!-- Project Overview -->
 MuscleMap is a modern, responsive web application designed to help users discover and filter exercises based on categories and equipment. The goal of this project is to build an interactive frontend application featuring robust UI integration, active data fetching from public APIs, and complex logic handling using pure HTML, CSS, and Vanilla JavaScript.
