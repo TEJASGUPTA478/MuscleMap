@@ -32,3 +32,5 @@ This application dynamically fetches data from the open-source **Free Exercise D
 * **Search & Sorting**: Added dynamic frontend search using the `.filter()` array method to find exercises rapidly by name. Implemented dynamic A-Z and Z-A sorting utilizing the `.sort()` array function.
 * **Code Modularity**: Refactored the monolithic script (`app.js`) into strict, logically separated modules: `data.js` (API and state), `ui.js` (DOM rendering), `features.js` (search, sort logic), and `main.js` (event listeners & initialization).
 * **Dark Mode**, Upgraded the UI with a scalable Dark Mode toggle utilizing CSS variables and DOM manipulation.
+<!-- Milestone 4:Deploy -->
+I have deployed using github: https://tejasgupta478.github.io/MuscleMap/
